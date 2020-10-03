@@ -44,26 +44,3 @@ def main(df):
                     print(pony_names[j]+": ", end='')
                     print(mentions_vals[i][j] / float(total_mentions[i]))
         print()
-
-"""
-    for n in range(6):
-        # creating a temp df for every pony, where the 5th column holds a bool if that pony speaks in this dialog
-        single_speaker = []
-        for i, x in df.iterrows():
-            if str(n) in x[4]:
-                single_speaker.append(True)
-            else:
-                single_speaker.append(False)
-        df.insert(5, 'single_pony', single_speaker)
-        dfs = df[df['single_pony'] == True]
-        
-        # counting mentions of each pony, by current pony n
-        mentions_vals[n].extend([0, 0, 0, 0, 0, 0])
-        for i, x in dfs.iterrows():
-            for m, e1 in enumerate(exps_m):  # looping through the mentions regex
-                if n != m and re.search(e1, x[3]) is not None:
-                    mentions_vals[n][m] += 1  # tallying up the # of times pony n mentions pony m
-                    total_mentions[n] += 1  # total number of times pony n mentions any other pony
-
-        df = df.drop(columns=['single_pony'])
-"""
