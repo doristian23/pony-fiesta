@@ -13,8 +13,6 @@ def main():
     parser.add_argument('-o', help="optional name of json output file; will output to stdout if left blank")
 
     args = parser.parse_args()
-
-    # dataframe = pd.read_csv(r"C:\Users\Admin\OneDrive\Documents\School\COMP 598\HW3\clean_dialog.csv")
     
     script_dir = osp.dirname(__file__)
 
